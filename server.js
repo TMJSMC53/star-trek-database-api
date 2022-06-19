@@ -3,8 +3,9 @@ const app = express();
 const cors = require("cors");
 const PORT = 8000;
 const MongoClient = require("mongodb").MongoClient;
-const connectionString =
-  "mongodb+srv://JackTree_Coding:56uPfKP26krYtvB@cluster0.ydbf8.mongodb.net/?retryWrites=true&w=majority;";
+require("dotenv").config();
+
+const connectionString = process.env.DB_STRING;
 
 app.use(cors());
 app.use(express.json());
