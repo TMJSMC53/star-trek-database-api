@@ -83,9 +83,12 @@ app.use(express.json());
 //   },
 // };
 
+// let connectionString = process.env.DB_STRING;
+
 MongoClient.connect(connectionString)
   .then((client) => {
     console.log(`Connected to Database`);
+
     const db = client.db("Star-Trek-Api");
     const infoCollection = db.collection("alien-info");
 
